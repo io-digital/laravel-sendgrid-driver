@@ -23,8 +23,6 @@
     "guzzlehttp/guzzle": "~5.2"
   },
   "require-dev": {
-    "illuminate/container": "~5.2.0",
-    "illuminate/filesystem": "~5.2.0",
     "phpunit/phpunit": ">=4.0"
   },
   "autoload": {
