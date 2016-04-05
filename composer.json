@@ -10,6 +10,14 @@
   ],
   "homepage": "https://bitbucket.org/io-digital/laravel-sendgrid-driver.git",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Ian van der Merwe",
+      "email": "ian@io.co.za",
+      "homepage": "http://io.co.za",
+      "role": "Developer"
+    }
+  ],
   "require": {
     "illuminate/mail": "~5.2",
     "guzzlehttp/guzzle": "~5.2"
@@ -31,13 +39,5 @@
   },
   "scripts": {
     "test": "phpunit"
-  },
-  "authors": [
-    {
-      "name": "Ian van der Merwe",
-      "email": "ian@io.co.za",
-      "homepage": "http://io.co.za",
-      "role": "Developer"
-    }
-  ]
+  }
 }
