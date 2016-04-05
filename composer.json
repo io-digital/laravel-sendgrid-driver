@@ -1,30 +1,36 @@
 {
-    "name": "io-digital/laravel-sendgrid-driver",
-    "description": "This liblary can add sendgrid driver into the laravel's mail configure.",
-    "license": "MIT",
-    "require": {
-        "illuminate/mail": "~5.1",
-        "guzzlehttp/guzzle": "~5.1"
-    },
-    "require-dev": {
-        "illuminate/container": "~5.1.0",
-        "illuminate/filesystem": "~5.1.0",
-        "phpunit/phpunit": ">=4.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "IoDigital\\SendGridDriver\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "files": [
-            "tests/TestCase.php"
-        ]
-    },
-    "authors": [
-        {
-            "name": "ian.vandermerwe",
-            "email": "ian@io.co.za"
-        }
-    ]
+  "name": "io-digital/laravel-sendgrid-driver",
+  "type": "library",
+  "description": "This liblary can add sendgrid driver into the laravel's mail configure.",
+  "license": "MIT",
+  "require": {
+    "illuminate/mail": "~5.2",
+    "guzzlehttp/guzzle": "~5.2"
+  },
+  "require-dev": {
+    "illuminate/container": "~5.2.0",
+    "illuminate/filesystem": "~5.2.0",
+    "phpunit/phpunit": ">=4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "IoDigital\\SendGridDriver\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "IoDigital\\GooglePubSub\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "authors": [
+    {
+      "name": "Ian van der Merwe",
+      "email": "ian@io.co.za",
+      "homepage": "http://io.co.za",
+      "role": "Developer"
+    }
+  ],
 }
