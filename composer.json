@@ -8,6 +8,7 @@
     "mail",
     "laravel"
   ],
+  "homepage": "https://bitbucket.org/io-digital/laravel-sendgrid-driver.git",
   "license": "MIT",
   "require": {
     "illuminate/mail": "~5.2",
