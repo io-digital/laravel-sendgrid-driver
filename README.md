@@ -1,4 +1,4 @@
-Laravel SendGrid Driver
+# laravel-sendgrid-driver
 ====
 
 A Mail Driver with support for Sendgrid Web API, using the original Laravel API.

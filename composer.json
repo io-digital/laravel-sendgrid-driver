@@ -2,6 +2,12 @@
   "name": "io-digital/laravel-sendgrid-driver",
   "type": "library",
   "description": "This liblary can add sendgrid driver into the laravel's mail configure.",
+  "keywords": [
+    "io-digital",
+    "sendgrid",
+    "mail",
+    "laravel"
+  ],
   "license": "MIT",
   "require": {
     "illuminate/mail": "~5.2",
@@ -19,7 +25,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "IoDigital\\GooglePubSub\\": "tests"
+      "IoDigital\\SendGridDriver\\": "tests"
     }
   },
   "scripts": {
