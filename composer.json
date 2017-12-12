@@ -12,10 +12,7 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Ian van der Merwe",
-      "email": "ian@io.co.za",
-      "homepage": "http://io.co.za",
-      "role": "Developer"
+      "name": "Ian van der Merwe"
     }
   ],
   "require": {
