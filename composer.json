@@ -13,6 +13,9 @@
   "authors": [
     {
       "name": "Ian van der Merwe"
+    },
+    {
+        "name": "Laurentiu Nicolae"
     }
   ],
   "require": {
