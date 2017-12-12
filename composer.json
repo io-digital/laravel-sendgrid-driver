@@ -8,7 +8,7 @@
     "mail",
     "laravel"
   ],
-  "homepage": "https://bitbucket.org/io-digital/laravel-sendgrid-driver.git",
+  "homepage": "https://github.com/io-digital/laravel-sendgrid-driver",
   "license": "MIT",
   "authors": [
     {
