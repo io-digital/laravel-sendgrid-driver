@@ -1,7 +1,7 @@
 {
   "name": "io-digital/laravel-sendgrid-driver",
   "type": "library",
-  "description": "This liblary can add sendgrid driver into the laravel's mail configure.",
+  "description": "SendGrid driver for Laravel's mail configuration",
   "keywords": [
     "io-digital",
     "sendgrid",
