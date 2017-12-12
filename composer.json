@@ -1,21 +1,21 @@
 {
   "name": "io-digital/laravel-sendgrid-driver",
   "type": "library",
-  "description": "This liblary can add sendgrid driver into the laravel's mail configure.",
+  "description": "SendGrid driver for Laravel's mail configuration",
   "keywords": [
     "io-digital",
     "sendgrid",
     "mail",
     "laravel"
   ],
-  "homepage": "https://bitbucket.org/io-digital/laravel-sendgrid-driver.git",
+  "homepage": "https://github.com/io-digital/laravel-sendgrid-driver",
   "license": "MIT",
   "authors": [
     {
-      "name": "Ian van der Merwe",
-      "email": "ian@io.co.za",
-      "homepage": "http://io.co.za",
-      "role": "Developer"
+      "name": "Ian van der Merwe"
+    },
+    {
+        "name": "Laurentiu Nicolae"
     }
   ],
   "require": {

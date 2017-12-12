@@ -43,6 +43,7 @@ class SendgridTransport extends Transport
         $this->setText($data, $message);
         $this->setAttachment($data, $message);
         $this->setSmtpApi($data, $message);
+        $this->setReplyTo($data, $message);
 
         if (version_compare(ClientInterface::VERSION, '6') === 1) {
             $payload += ['form_params' => $data];
@@ -86,6 +87,18 @@ class SendgridTransport extends Transport
         if ($bcc = $message->getBcc()) {
             $data['bcc'] = array_keys($bcc);
             $data['bccname'] = array_values($bcc);
+        }
+    }
+
+    /**
+     * @param $data
+     * @param Swift_Mime_Message $message
+     */
+    protected function setReplyTo(&$data, Swift_Mime_Message $message)
+    {
+        if ($replyTo = $message->getReplyTo()) {
+            $data['replyto'] = array_keys($replyTo);
+            $data['replytoname'] = array_values($replyTo);
         }
     }
 
