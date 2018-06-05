@@ -4,7 +4,7 @@ use GuzzleHttp\ClientInterface;
 use Illuminate\Mail\Transport\Transport;
 use Swift_Attachment;
 use Swift_Image;
-use Swift_Mime_Message;
+use Swift_Mime_SimpleMessage;
 use Swift_MimePart;
 
 class SendgridTransport extends Transport
@@ -26,7 +26,7 @@ class SendgridTransport extends Transport
     /**
      * {@inheritdoc}
      */
-    public function send(Swift_Mime_Message $message, &$failedRecipients = null)
+    public function send(Swift_Mime_SimpleMessage $message, &$failedRecipients = null)
     {
         list($from, $fromName) = $this->getFromAddresses($message);
         $payload = $this->options;
@@ -56,9 +56,9 @@ class SendgridTransport extends Transport
 
     /**
      * @param  $data
-     * @param  Swift_Mime_Message $message
+     * @param  Swift_Mime_SimpleMessage $message
      */
-    protected function setTo(&$data, Swift_Mime_Message $message)
+    protected function setTo(&$data, Swift_Mime_SimpleMessage $message)
     {
         if ($from = $message->getTo()) {
             $data['to'] = array_keys($from);
@@ -68,9 +68,9 @@ class SendgridTransport extends Transport
 
     /**
      * @param $data
-     * @param Swift_Mime_Message $message
+     * @param Swift_Mime_SimpleMessage $message
      */
-    protected function setCc(&$data, Swift_Mime_Message $message)
+    protected function setCc(&$data, Swift_Mime_SimpleMessage $message)
     {
         if ($cc = $message->getCc()) {
             $data['cc'] = array_keys($cc);
@@ -80,9 +80,9 @@ class SendgridTransport extends Transport
 
     /**
      * @param $data
-     * @param Swift_Mime_Message $message
+     * @param Swift_Mime_SimpleMessage $message
      */
-    protected function setBcc(&$data, Swift_Mime_Message $message)
+    protected function setBcc(&$data, Swift_Mime_SimpleMessage $message)
     {
         if ($bcc = $message->getBcc()) {
             $data['bcc'] = array_keys($bcc);
@@ -92,9 +92,9 @@ class SendgridTransport extends Transport
 
     /**
      * @param $data
-     * @param Swift_Mime_Message $message
+     * @param Swift_Mime_SimpleMessage $message
      */
-    protected function setReplyTo(&$data, Swift_Mime_Message $message)
+    protected function setReplyTo(&$data, Swift_Mime_SimpleMessage $message)
     {
         if ($replyTo = $message->getReplyTo()) {
             $data['replyto'] = array_keys($replyTo);
@@ -105,10 +105,10 @@ class SendgridTransport extends Transport
     /**
      * Get From Addresses.
      *
-     * @param Swift_Mime_Message $message
+     * @param Swift_Mime_SimpleMessage $message
      * @return array
      */
-    protected function getFromAddresses(Swift_Mime_Message $message)
+    protected function getFromAddresses(Swift_Mime_SimpleMessage $message)
     {
         if ($message->getFrom()) {
             foreach ($message->getFrom() as $address => $name) {
@@ -122,9 +122,9 @@ class SendgridTransport extends Transport
      * Set text contents.
      *
      * @param $data
-     * @param Swift_Mime_Message $message
+     * @param Swift_Mime_SimpleMessage $message
      */
-    protected function setText(&$data, Swift_Mime_Message $message)
+    protected function setText(&$data, Swift_Mime_SimpleMessage $message)
     {
         foreach ($message->getChildren() as $attachment) {
             if (!$attachment instanceof Swift_MimePart) {
@@ -138,9 +138,9 @@ class SendgridTransport extends Transport
      * Set Attachment Files.
      *
      * @param $data
-     * @param Swift_Mime_Message $message
+     * @param Swift_Mime_SimpleMessage $message
      */
-    protected function setAttachment(&$data, Swift_Mime_Message $message)
+    protected function setAttachment(&$data, Swift_Mime_SimpleMessage $message)
     {
         foreach ($message->getChildren() as $attachment) {
             if (!$attachment instanceof Swift_Attachment || !strlen($attachment->getBody()) > self::MAXIMUM_FILE_SIZE) {
@@ -156,9 +156,9 @@ class SendgridTransport extends Transport
      * Set Sendgrid SMTP API
      *
      * @param $data
-     * @param Swift_Mime_Message $message
+     * @param Swift_Mime_SimpleMessage $message
      */
-    protected function setSmtpApi(&$data, Swift_Mime_Message $message)
+    protected function setSmtpApi(&$data, Swift_Mime_SimpleMessage $message)
     {
         foreach ($message->getChildren() as $attachment) {
             if (!$attachment instanceof Swift_Image
